@@ -1,0 +1,57 @@
+
+<div  class="conteiner_user_2">
+    <div class="col-md-4">      
+      <button [routerLink]="['/create']" class="btn btn-primary" style="text-align:center">New Inventory
+        <span aria-hidden="true"></span>
+      </button>
+      
+    </div>
+  </div>
+
+<br><br>
+
+<label> Search by Name or Description</label>
+<input type="text" [(ngModel)]="searchkey"  name="searchkey" id="searchkey"/>
+<button name="search" (click)="search()">Search</button>
+
+<table class="table">
+  <thead>
+    <tr>
+     
+      <th>Name</th>
+      <th>Description</th> 
+      <th>Unit Price</th> 
+      <th>Unit Available</th> 
+      <th>Last Update</th>
+      <th>Action</th>     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let home of homes">  
+        <td>{{ home.name }}</td>   
+      <td>{{ home.description }}</td>  
+      <td>{{ home.unitPrice }}</td>   
+      <td>{{ home.unitAvailable }}</td>
+      <td>{{ home.date }}</td>
+      <td>
+         
+        <button asp-action="View" [routerLink]="['/view', home.id]"  class="btn btn-primary">ShowDetails</button>
+      </td>     
+    </tr>
+  </tbody>
+</table>  
+
+<br>
+
+
+<!--
+<br>
+<div class="conteiner_user_2">
+  <div class="col-md-4">
+    <button (click)="createEvent($event)" >Create</button>    
+    <button asp-action="Edit" href="/edit"class="btn btn-default">Edit</button>
+    <button asp-action="View" href="/view"class="btn btn-default">View</button>
+    <button asp-action="Delete" href="/delete" class="btn btn-default">Delete</button>
+  </div>
+</div>
+-->

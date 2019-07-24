@@ -1,0 +1,38 @@
+<h2 style="text-align:center">Edit Inventory List</h2>
+
+
+
+
+<hr />
+
+<div class="container">       
+        <div class="row">
+          <div class="col-md-6">
+            <form (ngSubmit)="updateUser(home.id, home)" #bookForm="ngForm">
+              <div class="form-group" style = "visibility:hidden;">
+                <label for="id">ID</label>
+                <input type="number" class="form-control" [(ngModel)]="home.id" name="id" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" [(ngModel)]="home.name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="address">Description</label>
+                <input type="text" class="form-control" [(ngModel)]="home.description" name="description" required>
+              </div>
+              <div class="form-group">
+                <label for="address">Unit Price</label>
+                <input type="text" class="form-control" [(ngModel)]="home.unitPrice" name="unitprice" required>
+              </div> 
+              <div class="form-group">
+                <label for="address">Unit Available</label>
+                <input type="text" class="form-control" [(ngModel)]="home.unitAvailable" name="unitavailable" required>
+              </div>       
+              <div class="form-group">
+                <button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>

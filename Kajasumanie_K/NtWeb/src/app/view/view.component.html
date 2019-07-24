@@ -1,0 +1,34 @@
+
+
+  <table   class="table">
+      <thead>
+        <tr >
+        
+          <th>Name</th>
+          <th>Description</th>  
+          <th>Unit Price</th> 
+          <th>Unit Available</th>
+          <th>Edit</th>
+          <th>Delete</th>    
+        </tr>
+      </thead>
+      <tbody >
+        <tr >  
+            <td>{{ home.name }}</td>  
+            <td>{{ home.description }}</td> 
+          <td>{{ home.unitPrice }}</td>  
+          <td>{{ home.unitAvailable }}</td>   
+          <td>
+             
+                
+                  <button [routerLink]="['/edit', home.id]" class="btn btn-primary" >EDIT
+                    <span aria-hidden="true"></span>
+                  </button>
+          </td>
+          <td>
+                  <button class="btn btn-danger" type="button" (click)="deleteUser(home.id)">DELETE</button>        
+               
+          </td>     
+        </tr>
+      </tbody>
+    </table>  

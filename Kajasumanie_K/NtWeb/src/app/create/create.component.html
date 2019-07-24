@@ -1,0 +1,45 @@
+
+<h1>{{ home.titlea }}</h1>
+<h2>Create</h2>
+<hr />
+
+    <div class="col-md-4">
+        <!--<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" >            -->
+            <form (ngSubmit)="saveUser()" #homeForm="ngForm">
+                <div class="form-group" style = "visibility:hidden;">
+                  <label for="id">ID</label>
+                  <input type="text" value="1" class="form-control" [(ngModel)]="home.id" name="id">
+                </div>
+               <!-- <div class="form-group">
+                  <label for="date-input">Date:</label>
+                  <input type="date"  [(ngModel)]="home.date" [value]="now" class="form-control" />
+              </div>-->
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" [(ngModel)]="home.name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="address">Description</label>
+                  <input type="text" class="form-control" [(ngModel)]="home.description" name="description" required>
+                </div>
+                
+
+                <div class="form-group">
+                  <label for="address">Unit Price</label>
+                  <input type="number" min="0" class="form-control" [(ngModel)]="home.unitprice" name="unitprice" required>
+                </div>
+               
+                <div class="form-group">
+                  <label for="address">Unit Available</label>
+                  <input type="number "  min="0" class="form-control" [(ngModel)]="home.unitavailable" name="unitavailable" required>
+                </div>
+                <div class="form-group">
+                  <button type="submit"  class="btn btn-success" [disabled]="!homeForm.form.valid">Save</button>
+                </div>
+              </form>
+              <button [routerLink]="['/homes/']" class="btn btn-primary" >Back
+                <span aria-hidden="true"></span>
+              </button> 
+    </div>
+
+
